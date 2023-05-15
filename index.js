@@ -85,7 +85,7 @@ let friend = {
     fname: 'Gavin',
     lname: 'Talusan',
     address: {
-        city: 'MM',
+        city: 'Manila',
         country: 'Philippines'
     },
     email: ['gavinnn17@gmail.com'],
@@ -100,10 +100,10 @@ friend.introduce()
 using object literals to create multiple kinds of pokemon 
 */
 let myPokemon = {
-    name: "Oshawott",
-    level: 5,
-    health: 19,
-    attack: 15,
+    name: "Mew",
+    level: 50,
+    health: 100,
+    attack: 20,
     tackle: function(){
         console.log("Tackled something");
         console.log("Opponent took damage");
@@ -133,15 +133,16 @@ function Pokemon(name, level, health, attack){
 }
 // new instances of pokemonobject with their unique properties
 
-let snivy = new Pokemon('snivy', 10)
-let tepig = new Pokemon('tepig', 10)
+let snivy = new Pokemon('snivy', 10);
+let tepig = new Pokemon('tepig', 10);
 
 snivy.tackle(tepig);
 snivy.faint(tepig);
 
+
 let trainer = {
     name: "Gavin",
-    age: 18,
+    age: 22,
     pokemon: [],
     friends: {
         "Brock": ["Pewter City", "Rock-type gym leader"],
@@ -152,9 +153,9 @@ let trainer = {
     }
 };
 
-let pikachu = new Pokemon("Pikachu", 10, 100,10 );
-let charmander = new Pokemon("Charmander", 10, 100,10);
-let squirtle = new Pokemon("Squirtle", 10, 100,10);
+let pikachu = new Pokemon("Pikachu", 10, 20, 10);
+let charmander = new Pokemon("Charmander", 10, 20, 10);
+let squirtle = new Pokemon("Squirtle", 10, 20, 10);
 trainer.pokemon.push(pikachu, charmander, squirtle);
 
 console.log(trainer.name);
@@ -166,8 +167,8 @@ trainer.talk();
 function Pokemon(name, level, health, attack) {
     this.name = name;
     this.level = level;
-    this.health = level + 10;
-    this.attack = level + 10;
+    this.health = health;
+    this.attack = 10 + level;
 
     this.tackle = function(target) {
         console.log(this.name + " tackled " + target.name);
@@ -184,9 +185,9 @@ function Pokemon(name, level, health, attack) {
     };
 }
 
-let bulbasaur = new Pokemon("Bulbasaur", 10, 100, 5 );
+let bulbasaur = new Pokemon("Bulbasaur", 10, 100, 10);
 let jigglypuff = new Pokemon("Jigglypuff", 10, 100, 10);
 let zubat = new Pokemon("Zubat", 10, 100, 10);
 
-bulbasaur.tackle(pikachu);
-pikachu.faint(pikachu);
+pikachu.tackle(bulbasaur);
+bulbasaur.faint(bulbasaur);
